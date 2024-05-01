@@ -1,0 +1,31 @@
+name : build & deploy spring boot application
+
+on:
+  push:
+    branches:
+      - main
+
+  jobs:
+    build-deploy:
+       name : Build And Deploy springBoot application
+       runs-on: ubuntu-latest
+       steps:
+        - name: checkout code  #checking out the code
+          uses: actions/checkout@v3
+        - name: setup JDK 17     # setting up the jdk for our runner
+          uses: actions/checkout@v3   # action that we want our git hub to perform on reposiotry
+          with:
+            distribution: 'corretto'  # setting up of jsk is happening
+            java-version: 17
+
+        - name: Unit Tests
+          run: mvn -B test --file pom.xml
+
+        - name: Build the application
+          run:
+            mvn clean
+            mvn -B package -- pom.xml
+
+
+
+
