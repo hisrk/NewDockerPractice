@@ -9,10 +9,10 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.newDocker</groupId>
-	<artifactId>Docker</artifactId>
+	<artifactId>myDockerApplication</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>Docker</name>
-	<description>Docker</description>
+	<description>my Docker Application</description>
 	<properties>
 		<java.version>17</java.version>
 	</properties>
